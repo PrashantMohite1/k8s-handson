@@ -20,6 +20,11 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 80
+          env:
+            - name: APP_VERSION
+              value: "1.0.0"
+            - name: APP_THEME
+              value: "default" # default | dark | ocean | sunset | forest
           resources:
             requests:
               cpu: 50m

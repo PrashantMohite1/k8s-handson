@@ -1,5 +1,19 @@
 const STORAGE_KEY = "k8s-test-notes";
 const COLORS = ["#ffffff", "#ffe8a3", "#c8f4de", "#d3e4ff", "#ffd6d6", "#e8d9ff"];
+const THEMES = ["default", "dark", "ocean", "sunset", "forest"];
+
+function applyDeployConfig() {
+  const config = window.APP_CONFIG || {};
+  const version = config.version && !config.version.startsWith("$") ? config.version : "dev";
+  const theme = THEMES.includes(config.theme) ? config.theme : "default";
+
+  document.documentElement.setAttribute("data-theme", theme);
+
+  const badge = document.getElementById("versionBadge");
+  if (badge) badge.textContent = `v${version} · ${theme}`;
+}
+
+applyDeployConfig();
 
 const board = document.getElementById("board");
 const emptyState = document.getElementById("emptyState");

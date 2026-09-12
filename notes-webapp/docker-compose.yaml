@@ -1,6 +1,9 @@
 services:
   notes-app:
     build: .
-    image: notes-app:local
+    image: notes-app:3.0
     ports:
       - "8080:80"
+    environment:
+      APP_VERSION: "3.0"
+      APP_THEME: "ocean" # default | dark | ocean | sunset | forest
