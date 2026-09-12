@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <h1>Notes</h1>
+      </div>
+      <div class="header-actions">
+        <input id="search" type="text" placeholder="Search notes..." />
+        <button id="newNoteBtn" class="btn btn-primary">+ New Note</button>
+      </div>
+    </header>
+
+    <main class="board" id="board">
+      <!-- note cards get rendered here -->
+    </main>
+
+    <p class="empty-state" id="emptyState" hidden>No notes yet. Click "New Note" to add one.</p>
+  </div>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <div class="modal">
+      <input id="noteTitle" class="modal-title" type="text" placeholder="Title" />
+      <textarea id="noteBody" class="modal-body" placeholder="Write something..."></textarea>
+      <div class="modal-footer">
+        <div class="color-swatches" id="colorSwatches"></div>
+        <div class="modal-buttons">
+          <button id="deleteBtn" class="btn btn-danger" hidden>Delete</button>
+          <button id="cancelBtn" class="btn btn-ghost">Cancel</button>
+          <button id="saveBtn" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

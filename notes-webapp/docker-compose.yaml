@@ -1,0 +1,6 @@
+services:
+  notes-app:
+    build: .
+    image: notes-app:local
+    ports:
+      - "8080:80"
